@@ -5,9 +5,14 @@
 
 <bean id="daoFactory" class="com.spring.chapter2.instancefactorypattern.dao.DaoObjectFactory" />
 
-<!-- Instance를 통한 Factory Pattern을 -->
+<!-- Instance를 통한 Factory Pattern -->
 <bean id="dao" factory-bean="daoFactory" factory-method="getDaoObjectFactory">
 	<constructor-arg index="0" value="DaoObejctA" />
+</bean>
+
+<!-- 정적 메소드를 이용한 Factory Pattern -->
+<bean id = "staticDao" class = "com.spring.chapter2.staticfactorymethod.dao.FixedDepositStaticDaoFactory" factory-method="getFixDepositStiaticDao">
+	<constructor-arg index="0" value = "2" />	
 </bean>
 
 </beans>
