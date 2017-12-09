@@ -17,6 +17,7 @@ public class FactoryMethodPattern
 		
 		FixDepositDaoInterface fixDepositDao = (FixDepositDaoInterface) context.getBean("staticDao");
 		fixDepositDao.printWhoAmI();
+		
 	}
 	
 }
