@@ -10,10 +10,10 @@ public class AOPMain
 {
     public static void main( String[] args )
     {
-    	Calculator cal = new MyCalculator();
+    		Calculator cal = new MyCalculator();
     	
-    	Calculator proxyCalculator = (Calculator) Proxy.newProxyInstance(cal.getClass().getClassLoader(), cal.getClass().getInterfaces(), new  MyCalculatorProxy(cal));
+    		Calculator proxyCalculator = (Calculator) Proxy.newProxyInstance(cal.getClass().getClassLoader(), cal.getClass().getInterfaces(), new  MyCalculatorProxy(cal));
     	
-    	System.out.println(proxyCalculator.add(3, 4));
+    		System.out.println(proxyCalculator.add(3, 4));
     }
 }
