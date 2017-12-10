@@ -8,4 +8,29 @@
 	<constructor-arg index = "1" value = "KDH" type = "String" />
 </bean>
 
+<bean id = "address" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Address">
+	<constructor-arg index = "0" value = "ghaziabad" type = "String"></constructor-arg>
+	<constructor-arg index = "1" value = "UP" type = "String"></constructor-arg>
+	<constructor-arg index = "2" value = "India" type = "String"></constructor-arg>
+</bean>
+
+<bean id = "addressEmployee" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Employee">
+	<constructor-arg index = "0" type = "int" value = "20"></constructor-arg>
+	<constructor-arg index = "1" type = "String" value = "KDH"></constructor-arg>
+	<constructor-arg ref = "address"></constructor-arg>
+	<property name="pass" value = "myPassword"></property>
+</bean>
+
+<bean id = "listEmployee" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Employee">
+	<constructor-arg index = "0" type = "int" value = "30"></constructor-arg>
+	<constructor-arg index = "1" type = "String" value = "What is the java?"></constructor-arg>
+	<constructor-arg>
+		<list>
+			<value>Java is a programming language</value>
+			<value>Java is a platform</value>
+			<value>Java is a good language</value>
+		</list>
+	</constructor-arg>
+</bean>
+
 </beans>

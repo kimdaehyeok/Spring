@@ -12,7 +12,12 @@ public class ConstructorInjectionMain
     		ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
     		
     		Employee employee = (Employee) context.getBean("employee");
-    		
     		employee.show();
+    		
+    		Employee addressEmp = (Employee) context.getBean("addressEmployee");
+    		addressEmp.addressShow();
+    		
+    		Employee listEmp = (Employee) context.getBean("listEmployee");
+    		listEmp.listShow();
     }
 }
