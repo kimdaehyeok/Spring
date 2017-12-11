@@ -33,4 +33,26 @@
 	</constructor-arg>
 </bean>
 
+<bean id = "answer1" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Answer">
+	<constructor-arg index = "0" value = "1" type = "int"/>
+	<constructor-arg index = "1" value = "Java is a programming" type = "String"/>
+	<constructor-arg index = "2" value = "KDH" type = "String"/>
+</bean>
+
+<bean id = "answer2" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Answer">
+	<constructor-arg index = "0" value = "2" type = "int"/>
+	<constructor-arg index = "1" value = "Spring is a framework" type = "String"/>
+	<constructor-arg index = "2" value = "KDH2" type = "String"/>
+</bean>
+
+<bean id = "question" class = "com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Question">
+	<constructor-arg index = "0" value = "3" type = "int"></constructor-arg>
+	<constructor-arg index = "1" value = "This is a question" type = "String"></constructor-arg>
+	<constructor-arg index = "2">
+		<list>
+			<ref bean = "answer1"/>
+			<ref bean = "answer2"/>
+		</list>
+	</constructor-arg>
+</bean>
 </beans>

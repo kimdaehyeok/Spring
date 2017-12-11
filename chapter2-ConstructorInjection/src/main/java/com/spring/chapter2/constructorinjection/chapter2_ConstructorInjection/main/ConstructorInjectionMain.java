@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Employee;
+import com.spring.chapter2.constructorinjection.chapter2_ConstructorInjection.domain.Question;
 
 public class ConstructorInjectionMain 
 {
@@ -19,5 +20,8 @@ public class ConstructorInjectionMain
     		
     		Employee listEmp = (Employee) context.getBean("listEmployee");
     		listEmp.listShow();
+    		
+    		Question question = (Question) context.getBean("question");
+    		question.show();
     }
 }
