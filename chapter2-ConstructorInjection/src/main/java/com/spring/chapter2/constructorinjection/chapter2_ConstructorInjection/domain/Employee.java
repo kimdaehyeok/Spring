@@ -29,6 +29,7 @@ public class Employee
 		this.name = name;
 		this.answers = answers;
 	}
+	
 	public int getId() 
 	{
 		return id;
@@ -84,5 +85,11 @@ public class Employee
 		{
 			System.out.println("answers : " + answer);
 		}
+	}
+	
+	public void inheritShow()
+	{
+		System.out.println(id + " " + name);
+		System.out.println(address.toString());
 	}
 }
