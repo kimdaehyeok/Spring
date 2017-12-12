@@ -39,5 +39,6 @@ public class ConstructorInjectionMain
     		Employee inheritEmployee = (Employee) context.getBean("inheritEmployee");
     		inheritEmployee.inheritShow();
     		System.out.println();
+    		
     }
 }
