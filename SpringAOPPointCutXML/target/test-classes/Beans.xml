@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans  
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+	    http://www.springframework.org/schema/aop   
+	    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd "
+        >
+
+<bean id = "opBean" class = "com.spring.example.aop.xml.domain.Operation"></bean>
+<bean id = "tractAspect" class = "com.spring.example.aop.xml.domain.TrackOperation"></bean>
+
+<aop:aspectj-autoproxy />  
+
+<aop:config>
+	<aop:aspect id = "myAspect" ref = "tractAspect">
+<!-- 	<aop:pointcut expression="execution(* com.spring.example.aop.xml.domain.Operation.*(..))" id="beforePointcut"/>
+		<aop:before method="myBeforeAdvice" pointcut-ref="beforePointcut"/> -->
+		
+<!-- 	<aop:pointcut expression="execution(* com.spring.example.aop.xml.domain.Operation.*(..))" id="afterPointcut"/>
+		<aop:after method="myAfterPointcut" pointcut-ref="afterPointcut"/> -->
+	</aop:aspect>
+</aop:config>
+
+</beans> 

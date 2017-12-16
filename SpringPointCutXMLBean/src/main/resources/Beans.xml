@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "cal" class="com.spring.aop.pointcut.SpringPointcut.domain.myCalculator"></bean>
+<bean id = "logPrintAroundAdvice" class="com.spring.aop.pointcut.SpringPointcut.advice.LogPrintAroundAdvice"></bean>
+
+
+<bean id="namePointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+	<property name="mappedNames">
+		<list>
+			<value>add</value>
+			<value>subtract</value>
+		</list>
+	</property>
+</bean>
+
+<!-- 어드바이저 = 포인트컷 + 어드바이스 -->
+<bean id = "nameAdvisor" class = "org.springframework.aop.support.DefaultPointcutAdvisor">
+	<property name="pointcut" ref="namePointCut"></property>
+	<property name="advice" ref = "logPrintAroundAdvice"></property>
+</bean>
+
+<bean id = "proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="target" ref="cal"></property>
+	<property name="interceptorNames">
+		<list>
+			<value>nameAdvisor</value>
+		</list>
+	</property>
+</bean>	
+	
+</beans> 

@@ -3,9 +3,93 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-<bean id="employee" class ="com.spring.chapter2.setterinjection.domain.Employee">
-	<property name="id" value="20"></property>
-	<property name="city" value="seoul"></property>
-	<property name="name" value="KDH"></property>
+<bean id = "employee" class = "com.spring.chapter2.setterinjection.domain.Employee">
+	<property name="id" value = "1"></property>
+	<property name="name" value = "KDH"></property>
+	<property name="city" value = "seoul"></property>
 </bean>
+
+<bean id = "address" class = "com.spring.chapter2.setterinjection.domain.Address">
+	<property name="addressLine1" value = "51,Lohianaga"></property>
+	<property name="city" value = "Ghaziabad"></property>
+	<property name="state" value = "UP"></property>
+	<property name="country" value = "India"></property>
+</bean>
+
+<bean id = "employeeAddress" class = "com.spring.chapter2.setterinjection.domain.Employee">
+	<property name="id" value = "2"></property>
+	<property name="name" value = "KDH2"></property>
+	<property name="city" value = "seoul2"></property>
+	<property name="address" ref = "address"></property>
+</bean>
+
+<bean id = "listAnser" class = "com.spring.chapter2.setterinjection.domain.Question">
+	<property name="id" value = "3"></property>
+	<property name="name" value = "KDH3"></property>
+	<property name="answerList">
+		<list>
+			<value>Java is a programming language</value>
+			<value>Java is a platform</value>
+			<value>Java is a good language </value>
+		</list>
+	</property>
+</bean>
+
+<bean id = "answer1" class = "com.spring.chapter2.setterinjection.domain.Answer">
+	<property name="id" value = "1"></property>
+	<property name="name" value = "KDH1"></property>
+	<property name="by" value = "value1"></property>
+</bean>
+
+<bean id = "answer2" class = "com.spring.chapter2.setterinjection.domain.Answer">
+	<property name="id" value = "2"></property>
+	<property name="name" value = "KDH2"></property>
+	<property name="by" value = "value2"></property>
+</bean>
+
+<bean id = "questionListObj" class = "com.spring.chapter2.setterinjection.domain.Question">
+	<property name="id" value = "100"></property>
+	<property name="name" value = "KDH100"></property>
+	<property name="answerListObj">
+		<list>
+			<ref bean = "answer1"/>
+			<ref bean = "answer2"/>
+		</list>
+	</property>
+</bean>
+
+<bean id = "questionMap" class = "com.spring.chapter2.setterinjection.domain.Question">
+	<property name="id" value = "200"></property>
+	<property name="name" value = "KDH200"></property>
+	<property name = "answerMap">
+		<map >
+			<entry key = "java1" value = "programming"></entry>
+			<entry key = "java2" value =  "platform"></entry>
+		</map>
+	</property>
+</bean>
+
+<bean id = "user1" class = "com.spring.chapter2.setterinjection.domain.User">
+	<property name="id" value = "500"></property>
+	<property name="name" value = "KDH500"></property>
+	<property name="email" value = "yeriel9159@gmail.com"></property>
+</bean>
+
+<bean id = "user2" class = "com.spring.chapter2.setterinjection.domain.User">
+	<property name="id" value = "600"></property>
+	<property name="name" value = "KDH600"></property>
+	<property name="email" value = "yeriel4415@naver.com"></property>
+</bean>
+
+<bean id = "questionObjMap" class = "com.spring.chapter2.setterinjection.domain.Question">
+	<property name="id" value = "700"></property>
+	<property name="name" value = "KDH700"></property>
+	<property name="answerObjMap" >
+		<map>
+			<entry key-ref = "answer1" value-ref = "user1"></entry>
+			<entry key-ref = "answer2" value-ref = "user2"></entry>
+		</map>
+	</property>
+</bean>
+
 </beans>
