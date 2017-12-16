@@ -3,6 +3,7 @@ package com.spring.chapter2.setterinjection.domain;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Question 
 {
@@ -12,6 +13,7 @@ public class Question
 	private List<Answer> answerListObj;
 	private Map<String,String> answerMap;  
 	private Map<Answer,User> answerObjMap;
+	private Map<Integer,String> hashMapObj;
 	
 	public int getId() 
 	{
@@ -62,6 +64,12 @@ public class Question
 	{
 		this.answerObjMap = answerObjMap;
 	}
+	public Map<Integer, String> getHashMapObj() {
+		return hashMapObj;
+	}
+	public void setHashMapObj(Map<Integer, String> hashMapObj) {
+		this.hashMapObj = hashMapObj;
+	}
 	
 	public void show()
 	{
@@ -109,6 +117,20 @@ public class Question
 			System.out.println(answer.getValue().getId());
 			System.out.println(answer.getValue().getName());
 			System.out.println(answer.getValue().getEmail());
+		}
+	}
+	
+	public void showHashMap()
+	{
+		Set set = hashMapObj.entrySet();
+		Iterator iterator = set.iterator();
+		
+		while(iterator.hasNext())
+		{
+			Map.Entry mentry = (Map.Entry)iterator.next();
+	        System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
+	        System.out.println(mentry.getValue());
+
 		}
 	}
 }

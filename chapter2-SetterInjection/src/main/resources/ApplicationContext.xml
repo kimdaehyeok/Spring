@@ -92,4 +92,13 @@
 	</property>
 </bean>
 
+<bean id = "hashMapObj" class = "com.spring.chapter2.setterinjection.domain.Question">
+	<property name="hashMapObj">
+		<map>
+			<entry key="10" value = "string1"></entry>
+			<entry key="20" value = "string2"></entry>
+		</map>
+	</property>
+</bean>
+
 </beans>
