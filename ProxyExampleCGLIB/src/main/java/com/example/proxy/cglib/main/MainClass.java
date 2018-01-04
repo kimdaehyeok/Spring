@@ -13,7 +13,7 @@ public class MainClass
 {
     public static void main( String[] args )
     {	
-    	Enhancer enhancer = new Enhancer();
+   	Enhancer enhancer = new Enhancer();
     	enhancer.setSuperclass(PersonService.class);
     	enhancer.setCallback(new MethodInterceptorImpl());
     	

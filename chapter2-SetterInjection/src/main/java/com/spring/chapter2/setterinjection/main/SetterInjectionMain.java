@@ -13,6 +13,6 @@ public class SetterInjectionMain
     		
     		Employee employee = (Employee) context.getBean("employee");
     		
-    		employee.display();
+    		employee.show();
     }
 }
