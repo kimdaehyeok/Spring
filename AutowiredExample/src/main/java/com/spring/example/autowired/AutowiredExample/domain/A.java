@@ -23,5 +23,5 @@ public class A
 	{
 		print();
 		b1.print();
-	}
+	}	
 }
