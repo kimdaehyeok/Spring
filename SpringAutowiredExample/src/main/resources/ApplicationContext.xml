@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<context:annotation-config/>
+
+<bean id = "spellCheck1" class = "com.spring.example.autowired.AutowiredExample.domain.SpellChecker">
+	<constructor-arg index = "0" value = "spellCheck1"></constructor-arg>
+</bean>
+<bean id = "spellCheck2" class = "com.spring.example.autowired.AutowiredExample.domain.SpellChecker">
+	<constructor-arg index = "0" value = "spellCheck2"></constructor-arg>
+</bean>
+
+<bean id = "textEditor" class = "com.spring.example.autowired.AutowiredExample.domain.TextEditor"></bean>
+<bean id = "textEditorProperty" class = "com.spring.example.autowired.AutowiredExample.domain.TextEditorProperty"></bean> 
+
+<!-- ByName인 경우 setB()로 되어 있는 setter 함수가 존재해야 한다. -->
+<!--  <bean id="b" class="com.spring.example.autowired.AutowiredExample.domain.B"></bean>  
+<bean id="a" class="com.spring.example.autowired.AutowiredExample.domain.A" autowire="byName"></bean> -->  
+
+<!--ByType인경우 b1,b2가 있다면 에러 발생  -->
+<!-- <bean id="b1" class="com.spring.example.autowired.AutowiredExample.domain.B"></bean>
+<bean id="b2" class="com.spring.example.autowired.AutowiredExample.domain.B"></bean>
+<bean id="a" class="com.spring.example.autowired.AutowiredExample.domain.A" autowire="byType"></bean>  -->
+
+  
+</beans>

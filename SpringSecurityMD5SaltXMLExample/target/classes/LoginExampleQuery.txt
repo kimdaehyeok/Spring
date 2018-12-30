@@ -1,0 +1,47 @@
+CREATE  TABLE SCOTT.users (
+  username VARCHAR(45) NOT NULL ,
+  password VARCHAR(45) NOT NULL ,
+  enabled INT NOT NULL ,
+  CONSTRAINT PLAYER_PK PRIMARY KEY (username)
+ );
+
+CREATE TABLE scott.user_roles (
+  user_role_id INTEGER,
+  username varchar(45) NOT NULL,
+  role varchar(45) NOT NULL,
+  CONSTRAINT PLAYER_PK1 PRIMARY KEY (user_role_id)
+);
+
+INSERT INTO scott.users(username,password,enabled)
+VALUES ('kdh','123456', 1);
+INSERT INTO scott.users(username,password,enabled)
+VALUES ('amy','123456', 1);
+
+INSERT INTO scott.user_roles (USER_ROLE_ID,USERNAME, role)
+VALUES (1,'kdh', 'ROLE_USER');
+INSERT INTO scott.user_roles (USER_ROLE_ID,USERNAME, role)
+VALUES (2,'kdh', 'ROLE_ADMIN');
+INSERT INTO scott.user_roles (USER_ROLE_ID,USERNAME, role)
+VALUES (3,'amy', 'ROLE_USER');
+;
+
+-------------------------------------------- Spring Attempts Lock start
+
+CREATE TABLE scott.user_attempts (
+  username varchar(45) NOT NULL,
+  attempts varchar(45) NOT NULL,
+  lastModified DATE NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+ALTER TABLE SCOTT.USER_ATTEMPTS MODIFY ID NVARCHAR2(22) 
+
+// Alter Table
+CREATE TABLE SCOTT.USERS (
+  username VARCHAR(45) NOT NULL ,
+  password VARCHAR(45) NOT NULL ,
+  enabled INTEGER DEFAULT 1 NOT NULL,
+  accountNonExpired INTEGER DEFAULT 1 NOT NULL,
+  accountNonLocked INTEGER DEFAULT 1 NOT NULL,
+  credentialsNonExpired INTEGER DEFAULT 1 NOT NULL,
+  PRIMARY KEY (username));
